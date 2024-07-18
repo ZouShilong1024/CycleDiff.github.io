@@ -1,2 +1,2 @@
 
-# CycleDiff project page
+# MS2A-CFOD
