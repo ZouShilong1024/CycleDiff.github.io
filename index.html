@@ -159,14 +159,21 @@
 
         <div class="content has-text-justified">
           <p>
-            We present a diffusion-based cycle translator for unpaired image-to-image translation. Unlike GAN-based methods, our method learns the image translation process as a multi-step mapping rather than a one-step one, thus improving the generation quality greatly.Existing diffusion-based studies separately learn the diffusion and translation processes since their data interfaces are mismatched, i.e., the diffusion process is applied to the noisy data while the translation process is conducted on the clean data. However, the separate training may cause the local minimal of the translation optimization. 
+            We introduce a diffusion-based cross-domain image translator in the absence of paired training data.
+            Unlike GAN-based methods, our approach integrates diffusion models to learn the image translation process, allowing for more coverable modeling of the data distribution and performance improvement of the cross-domain translation.
+            However, incorporating the translation process with the diffusion process is still challenging since the two processes are not aligned exactly, i.e., the diffusion process is applied to the noisy data while the translation process is conducted on the clean data. 
+            As a result, recent diffusion-based studies always learn the two processes separately, yet it may cause the local minimal of the translation optimization, constraining the effectiveness of diffusion models.
           </p>
           <p>
-            In this paper, we address the interface mismatch problem between the diffusion and translation processes and learn the two processes jointly, improving the global optimality. To the best of our knowledge, this is <b> the first attempt to </b> learn the diffusion and translation processes jointly.
-            Specifically, we propose to extract the image components with diffusion models to represent the clean data, addressing the interface mismatch between the diffusion and translation processes, which facilitates the joint learning. On the other hand, we introduce a time-dependent translation network to learn the multi-step mapping, resulting in effective translation learning and significant performance improvement. Benefiting from the design of joint learning, our method enables global optimization of both processes, enhancing the optimality and achieving improved fidelity and structural consistency.
+            To address the problem, we propose to learn the two processes jointly, improving the global optimality.
+            To the best of our knowledge, this is <b> the first attempt </b> to learn the diffusion and translation processes jointly.
+            Specifically, we propose to extract the image components with diffusion models to represent the clean data and employ the translation process with the image components, enabling an end-to-end joint learning manner.
+            On the other hand, we introduce a time-dependent translation network to learn the complex translation mapping, resulting in effective translation learning and significant performance improvement.
+            Benefiting from the design of joint learning, our method enables global optimization of both processes, enhancing the optimality and achieving improved fidelity and structural consistency.
           </p>
           <p>
-            We have conducted extensive experiments on RGB&lrarr;RGB and cross-modality translation tasks including RGB&lrarr;Edge, RGB&lrarr;Semantics and RGB&lrarr;Depth, showcasing better generative performances than the state of the arts. Especially, our method achieves the best FID score in widely-adopted tasks and outperforms the second-best method with an improved FID of 28.07 and 39.38 on Dog&rarr;Cat and Dog&rarr;Wild respectively.
+            We have conducted extensive experiments on RGB&lrarr;RGB and cross-modality translation tasks including RGB&lrarr;Edge, RGB&lrarr;Semantics and RGB&lrarr;Depth, showcasing better generative performances than the state of the arts.
+            Especially, our method achieves the best FID score in widely-adopted tasks and outperforms the second-best method with an improved FID of 28.07 and 39.38 on Dog&rarr;Cat and Dog&rarr;Wild respectively.
           </p>
         </div>
       </div>
